@@ -13,5 +13,6 @@ router.post("/log-in", userController.createSession);
 router.post("/update-user/:id", verifyUser, userController.updateUser)
 router.get("/get-user/:id", verifyUser, userController.getUser);
 router.post("/delete/:id", verifyUser, userController.deleteUser);
+router.get("/sign-out", verifyUser, userController.destroySession);
 
 module.exports = router;

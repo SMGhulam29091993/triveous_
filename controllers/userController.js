@@ -130,4 +130,14 @@ module.exports.deleteUser = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
+};
+
+module.exports.destroySession = (req, res, next) => {
+    try {
+        // Set the "jwtToken" cookie with an expiration in the past
+        res.cookie("jwtToken", "", { httpOnly: true });
+        res.status(200).send({ message: "User Log-out successfully", success: true, user: null });
+    } catch (error) {
+        next(error);
+    }
+};
