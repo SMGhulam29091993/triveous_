@@ -14,3 +14,12 @@ module.exports.createProduct = async (req,res,next)=>{
         next(error);
     }
 }
+
+module.exports.getProductDetails = async (req,res,next)=>{
+    try {
+        const productDetails = await Product.findOne({where : {id : req.params.id}});
+        res.status(200).send({message:"Here are the product details!!", success:true, productDetails});
+    } catch (error) {
+        next(error)
+    }
+}
