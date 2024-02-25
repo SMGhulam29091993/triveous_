@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 
 
 const app = express();
-const db = require("./config/mysql.js")
+
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
