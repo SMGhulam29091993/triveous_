@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const PORT = 8000 || process.env.PORT ;
+const PORT = process.env.PORT ;
 const morgan = require("morgan");
 require("colors");
 const errorHandler = require("./config/errorHandlerMiddleware.js");
